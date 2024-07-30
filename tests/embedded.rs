@@ -27,7 +27,7 @@ impl bevy::asset::AssetLoader for TestAssetLoader {
     type Error = TestError;
     async fn load<'a>(
         &'a self,
-        reader: &'a mut bevy::asset::io::Reader<'_>,
+        reader: &'a mut dyn bevy::asset::io::Reader,
         _: &'a (),
         _: &'a mut bevy::asset::LoadContext<'_>,
     ) -> Result<Self::Asset, Self::Error> {
